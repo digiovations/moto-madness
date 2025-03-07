@@ -1,0 +1,85 @@
+{
+  "name": "lance-gg",
+  "version": "5.0.2",
+  "description": "A Node.js based real-time multiplayer game server",
+  "type": "module",
+  "main": "dist/server/lance-gg.js",
+  "browser": "dist/client/lance-gg.js",
+  "types": "dist/types/lance-gg.d.ts",
+  "scripts": {
+    "docs": "jsdoc -c jsdoc.conf.json",
+    "build": "rollup --config rollup.config.js",
+    "test-all": "mocha test/EndToEnd/",
+    "test-serializer": "mocha ./test/serializer/",
+    "test": "mocha ./test/serializer/"
+  },
+  "keywords": [
+    "pixijs",
+    "pixi",
+    "socket",
+    "canvas",
+    "WebGL",
+    "HTML5",
+    "AFrame",
+    "physics",
+    "engine",
+    "game",
+    "realtime",
+    "multiplayer"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lance-gg/lance.git"
+  },
+  "dependencies": {
+    "@types/cannon": "^0.1.12",
+    "@types/event-emitter": "^0.3.5",
+    "@types/p2": "^0.7.44",
+    "@types/three": "^0.163.0",
+    "bufferutil": "^4.0.1",
+    "cannon": "^0.6.2",
+    "event-emitter": "^0.3.5",
+    "jsdoc": "^4.0.2",
+    "mkdirp": "^0.5.1",
+    "p2": "^0.7.1",
+    "socket.io": "^4.7.5",
+    "socket.io-client": "^4.7.5",
+    "tslib": "^2.6.2",
+    "typescript": "next",
+    "utf-8-validate": "^5.0.2"
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "author": "Opher Vishnia",
+  "contributors": [
+    {
+      "name": "Opher Vishnia"
+    },
+    {
+      "name": "Gary Weiss"
+    }
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/lance-gg/lance/issues"
+  },
+  "homepage": "https://github.com/lance-gg/lance#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "chai": "^3.5.0",
+    "eslint": "^8.28.0",
+    "eslint-config-google": "^0.6.0",
+    "express": "^4.14.0",
+    "lance-docs-template": "github:lance-gg/lance-docs-template#semver:^1.0.1",
+    "mocha": "^10.1.0",
+    "query-string": "^4.3.1",
+    "rollup": "^4.14.2",
+    "rollup-plugin-dts": "^6.1.0",
+    "should": "^11.0.0"
+  }
+}
