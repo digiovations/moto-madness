@@ -1,0 +1,16 @@
+{
+    "name": "moto-madness",
+    "version": "1.0.0",
+    "description": "Multiplayer motorcycle stunt game using Colyseus & Phaser",
+    "main": "server/index.js",
+    "scripts": {
+      "start": "node server/index.js"
+    },
+    "dependencies": {
+      "colyseus": "^0.14.21",
+      "express": "^4.17.1",
+      "lance-gg": "^5.3.2",
+      "phaser": "^3.55.2"
+    }
+  }
+  
