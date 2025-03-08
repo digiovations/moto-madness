@@ -1,13 +1,26 @@
-import express from 'express';
-import { Server } from 'colyseus';
-import { createServer } from 'http';
-import { StuntRoom } from './rooms/StuntRoom.js';
+// server/index.js
+const http = require('http');
+const express = require('express');
+const colyseus = require('colyseus');
+const GameRoom = require('./rooms/GameRoom');
+const FreestyleRoom = require('./rooms/FreestyleRoom');
+const TagRoom = require('./rooms/TagRoom');
+const TeamRoom = require('./rooms/TeamRoom');
 
 const app = express();
-const server = createServer(app);
-const gameServer = new Server({ server });
 
-gameServer.define("stunt_room", StuntRoom);
-gameServer.listen(2567);
+// Serve client static files (assumes client folder is sibling to server folder)
+app.use(express.static('../client'));
 
-console.log("Multiplayer Stunt Game Server running on ws://localhost:2567");
+const server = http.createServer(app);
+const gameServer = new colyseus.Server({ server });
+
+// Define room handlers
+gameServer.define("game", GameRoom);
+gameServer.define("freestyle", FreestyleRoom);
+gameServer.define("tag", TagRoom);
+gameServer.define("team_battle", TeamRoom);
+
+const port = process.env.PORT || 2567;
+gameServer.listen(port);
+console.log(`Server running on ws://localhost:${port}`);

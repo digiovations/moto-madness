@@ -1,0 +1,15 @@
+{
+    "name": "moto-madness-server",
+    "version": "1.0.0",
+    "description": "Multiplayer Motorcycle Stunt Game Server using Colyseus",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js"
+    },
+    "dependencies": {
+      "colyseus": "^0.14.21",
+      "express": "^4.17.1",
+      "sqlite3": "^5.1.2"
+    }
+  }
+  
